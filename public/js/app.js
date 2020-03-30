@@ -4,7 +4,8 @@ search.addEventListener('click', (e) => {
     const searchInput = document.querySelector('#searchInput')
     const location = document.querySelector('#location')
     const forecast = document.querySelector('#forecast')
-    const url = 'http://localhost:3000/weather?address=' + (searchInput.value?searchInput.value:'')
+    // url changed to give relative address
+    const url = '/weather?address=' + (searchInput.value?searchInput.value:'')
 
     location.innerHTML = 'LOADING...'
     forecast.innerHTML = ''
