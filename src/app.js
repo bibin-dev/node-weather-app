@@ -74,17 +74,13 @@ app.get('/weather', (req, res) => {
             })
         }
         //weather forecast 
-        forecast(latitude, longitude, (forecastError, forecastData) => {
+        forecast(latitude, longitude, (forecastError, { currentForecast, dailyForecast } = {}) => {
             if (forecastError) {
                 return res.send({
                     forecastError
                 })
             }
-            res.send({
-                forecast: forecastData,
-                location: location,
-                address
-             })
+            res.send({ currentForecast, dailyForecast, location, address })
         })
     })
 

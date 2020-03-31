@@ -24,7 +24,7 @@ search.addEventListener('click', (e) => {
                 if(location.classList.value.search('error-highlight') > -1)
                     location.classList.toggle('error-highlight')
                 location.innerHTML = data.location
-                forecast.innerHTML = data.forecast
+                forecast.innerHTML = data.currentForecast + data.dailyForecast
             }
         })
     })
